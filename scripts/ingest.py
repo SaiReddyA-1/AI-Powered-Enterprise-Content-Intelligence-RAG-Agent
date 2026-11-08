@@ -1,5 +1,5 @@
 """
-Startup Ingestion Script — Runs the full offline pipeline on startup.
+Startup Ingestion Script - Runs the full offline pipeline on startup.
 Pipeline: Scan → Parse → OCR → Triage → Chunk → Embed → Upload to OpenSearch
 
 Uses FileManifest for incremental processing:
@@ -163,7 +163,7 @@ def run_ingestion():
                 manifest.save()  # Periodic save
 
         except Exception as e:
-            logger.error(f"FAILED: {file_name} — {e}")
+            logger.error(f"FAILED: {file_name} - {e}")
             manifest.mark_failed(rel_path, str(e))
             failed_docs += 1
 
@@ -172,7 +172,7 @@ def run_ingestion():
 
     elapsed = round(time.time() - start, 1)
     logger.info("=" * 60)
-    logger.info(f"INGESTION COMPLETE — {elapsed}s")
+    logger.info(f"INGESTION COMPLETE - {elapsed}s")
     logger.info(f"  New: {added_docs}, Updated: {updated_docs}, Removed: {removed_docs}")
     logger.info(f"  Unchanged: {len(diff['unchanged'])}, Failed: {failed_docs}")
     logger.info(f"  Chunks indexed: {total_chunks}")

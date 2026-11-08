@@ -1,5 +1,5 @@
 """
-HybridSearchClient — OpenSearch-backed vector + metadata storage.
+HybridSearchClient - OpenSearch-backed vector + metadata storage.
 Handles index creation, bulk upload, hybrid search, and metadata queries.
 Falls back to in-memory mode if OpenSearch is unavailable.
 """

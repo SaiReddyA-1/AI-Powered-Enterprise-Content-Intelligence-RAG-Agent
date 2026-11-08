@@ -1,5 +1,5 @@
 """
-Triage Service — Classifies documents by type, department, and quality.
+Triage Service - Classifies documents by type, department, and quality.
 Uses a 4-tier classification system:
   1. Folder path (95% confidence)
   2. Filename keywords (85-92%)

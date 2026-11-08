@@ -1,5 +1,5 @@
 """
-Repository Intelligence Engine — analytics on metadata without vector math.
+Repository Intelligence Engine - analytics on metadata without vector math.
 Powers the Intelligence Dashboard with aggregate queries.
 """
 from typing import Dict, Any, List

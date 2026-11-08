@@ -25,7 +25,7 @@ Thumbs.db
 # Logs
 logs/
 
-# Runtime data (uploads, manifest, chat history — not source controlled)
+# Runtime data (uploads, manifest, chat history - not source controlled)
 Data/Rag/uploads/
 Data/file_manifest.json
 Data/chat_history/

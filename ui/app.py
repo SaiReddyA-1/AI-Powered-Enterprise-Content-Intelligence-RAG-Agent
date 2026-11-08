@@ -1,5 +1,5 @@
 """
-Enterprise Content Intelligence — AI-Powered RAG Platform
+Enterprise Content Intelligence - AI-Powered RAG Platform
 Multi-page Streamlit Dashboard with persistent chat history.
 """
 import streamlit as st
@@ -37,7 +37,7 @@ st.markdown("""
     /* ── Global ── */
     .block-container { padding-top: 1rem; max-width: 1200px; }
 
-    /* ── Metric Cards — glassmorphism ── */
+    /* ── Metric Cards - glassmorphism ── */
     [data-testid="stMetric"] {
         background: rgba(255,255,255,0.05);
         backdrop-filter: blur(10px);
@@ -410,7 +410,7 @@ def page_chat():
     with col1:
         if conversations:
             options = ["Current"] + [
-                f"{c['updated'][:10]} — {c['preview'][:45]}..."
+                f"{c['updated'][:10]} - {c['preview'][:45]}..."
                 for c in reversed(conversations)
             ]
             selected_idx = st.selectbox(
@@ -437,7 +437,7 @@ def page_chat():
             st.session_state.conversation_id = None
             st.rerun()
 
-    # ── Empty state — suggestion cards ───────────────────────────────
+    # ── Empty state - suggestion cards ───────────────────────────────
     if "prefill_prompt" not in st.session_state:
         st.session_state.prefill_prompt = None
 
@@ -473,7 +473,7 @@ def page_chat():
         </div>"""
         st.markdown(chip_html, unsafe_allow_html=True)
 
-        # Hidden Streamlit buttons — triggered by chip onclick
+        # Hidden Streamlit buttons - triggered by chip onclick
         st.markdown('<div class="suggestion-btn-row">', unsafe_allow_html=True)
         cols = st.columns(len(suggestions))
         for i, (_, _, _, prompt) in enumerate(suggestions):
@@ -825,7 +825,7 @@ def page_pipeline_monitor():
         ("Triage AI", f"{len(state['document_types'])} types, {len(state['departments'])} depts", "4-tier classification + quality scoring"),
         ("Chunking Engine", f"{state['total_chunks']:,} chunks", f"{settings.CHUNK_SIZE} chars, {settings.CHUNK_OVERLAP} overlap"),
         ("Embedding Generator", f"{settings.EMBEDDING_DIMENSIONS}D vectors", f"{settings.EMBEDDING_MODEL_NAME.split('/')[-1]}"),
-        ("Vector Index", f"{db_stats.get('total_chunks', state['total_chunks']):,} indexed", f"{db_stats['mode'].upper()} — HNSW cosine"),
+        ("Vector Index", f"{db_stats.get('total_chunks', state['total_chunks']):,} indexed", f"{db_stats['mode'].upper()} - HNSW cosine"),
     ]
 
     icons = ["1", "2", "3", "4", "5", "6", "7"]
@@ -1037,7 +1037,7 @@ def page_intelligence():
 
 
 # ══════════════════════════════════════════════════════════════════════════
-#  MAIN — Sidebar Navigation
+#  MAIN - Sidebar Navigation
 # ══════════════════════════════════════════════════════════════════════════
 def main():
     db = get_backend()[0]

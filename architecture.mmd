@@ -1,7 +1,7 @@
 %%{init: {'theme': 'base', 'themeVariables': {'primaryColor': '#228be6', 'primaryTextColor': '#fff', 'primaryBorderColor': '#1971c2', 'lineColor': '#495057', 'secondaryColor': '#f1f3f5', 'tertiaryColor': '#e9ecef'}}}%%
 
 graph TB
-    subgraph OFFLINE["OFFLINE PIPELINE — Incremental Processing"]
+    subgraph OFFLINE["OFFLINE PIPELINE - Incremental Processing"]
         direction TB
 
         A["📂 Repository Scanner<br/><i>services/ingestion/connectors.py</i><br/>Recursive scan · SHA-256 dedup<br/>Supported: PDF, DOCX, MD, CSV, XLSX,<br/>TXT, JSON, XML, JPG, PNG"]
@@ -26,7 +26,7 @@ graph TB
         M -.->|"Deleted files"| G
     end
 
-    subgraph ONLINE["ONLINE PIPELINE — Per Query"]
+    subgraph ONLINE["ONLINE PIPELINE - Per Query"]
         direction TB
 
         Q["💬 User Query<br/><i>ui/app.py</i><br/>Natural language input<br/>+ Conversation history"]
@@ -61,7 +61,7 @@ graph TB
     G -. "Metadata queries" .-> D3
     M -. "Reads/Writes" .-> D4
 
-    subgraph UI["STREAMLIT DASHBOARD — 4 Pages"]
+    subgraph UI["STREAMLIT DASHBOARD - 4 Pages"]
         direction LR
         P1["🤖 AI Chat<br/>Query + History<br/>Sources + Confidence"]
         P2["📁 Data Manager<br/>View · Upload · Delete<br/>Manifest-integrated"]

@@ -1,5 +1,5 @@
 """
-OCR Service — Extracts text from images and scanned PDFs using Tesseract.
+OCR Service - Extracts text from images and scanned PDFs using Tesseract.
 Runs conditionally only when the parser detects insufficient text.
 """
 from pathlib import Path
@@ -80,7 +80,7 @@ class OCRService:
             return result
 
         if not self._check_available():
-            # OCR not available — pass through with warning
+            # OCR not available - pass through with warning
             result["detected_issues"] = result.get("detected_issues", [])
             if "ocr_unavailable" not in result.get("detected_issues", []):
                 issues = list(result.get("detected_issues", []))

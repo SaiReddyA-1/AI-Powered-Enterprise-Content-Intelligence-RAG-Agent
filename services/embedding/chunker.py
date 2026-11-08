@@ -1,5 +1,5 @@
 """
-Advanced Chunking Engine — Splits documents into chunks with full metadata inheritance.
+Advanced Chunking Engine - Splits documents into chunks with full metadata inheritance.
 For PDFs, uses page-aware chunking so each chunk knows its page number.
 """
 import re

@@ -1,5 +1,5 @@
 """
-RAG Engine — Orchestrates the full query pipeline.
+RAG Engine - Orchestrates the full query pipeline.
 Handles 3 query types:
   1. Analytics queries (how many, count, list all) → metadata aggregation
   2. Retrieval queries (show me, find, what is) → vector search + LLM
@@ -198,17 +198,17 @@ class RAGEngine:
         system_prompt = (
             "You are an enterprise document intelligence assistant.\n"
             "You have access to THREE types of information:\n"
-            "1. FULL DOCUMENT content — complete text of specifically requested files\n"
-            "2. REPOSITORY ANALYTICS — metadata counts, file listings, quality stats\n"
-            "3. RETRIEVED DOCUMENTS — semantically relevant chunks from vector search\n\n"
+            "1. FULL DOCUMENT content - complete text of specifically requested files\n"
+            "2. REPOSITORY ANALYTICS - metadata counts, file listings, quality stats\n"
+            "3. RETRIEVED DOCUMENTS - semantically relevant chunks from vector search\n\n"
             "RULES:\n"
             "- Answer ALL questions in the user's message, even if there are multiple.\n"
             "- For count/summary questions, use the REPOSITORY ANALYTICS section.\n"
             "- For specific file questions, use the FULL DOCUMENT section.\n"
             "- For content questions, use the RETRIEVED DOCUMENTS section.\n"
             "- ALWAYS cite sources with exact file names.\n"
-            "- Be precise with numbers — use exact counts from the metadata.\n"
-            "- Present data in structured format — tables, bullet points, clear sections.\n"
+            "- Be precise with numbers - use exact counts from the metadata.\n"
+            "- Present data in structured format - tables, bullet points, clear sections.\n"
             "- If information is not available, say so clearly for that specific question.\n\n"
             f"{full_context}"
         )
@@ -328,7 +328,7 @@ class RAGEngine:
     def _get_full_doc_context(self, file_name: str) -> tuple:
         """
         Retrieve ALL chunks of a document and return as context string + sources.
-        Does NOT call LLM — just gathers the context.
+        Does NOT call LLM - just gathers the context.
         Returns: (context_string, sources_list)
         """
         logger.info(f"Full document retrieval: {file_name}")

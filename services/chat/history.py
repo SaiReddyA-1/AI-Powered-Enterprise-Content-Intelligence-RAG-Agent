@@ -1,5 +1,5 @@
 """
-Chat History Manager — Persists conversations to JSON file.
+Chat History Manager - Persists conversations to JSON file.
 Survives browser refresh, container restart, and terminal close.
 """
 import json

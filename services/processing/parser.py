@@ -1,5 +1,5 @@
 """
-Document Parser — Extracts text from enterprise file formats.
+Document Parser - Extracts text from enterprise file formats.
 Produces per-page text for PDFs to enable page-level chunking.
 """
 import os
